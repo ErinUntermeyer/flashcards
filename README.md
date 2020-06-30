@@ -14,11 +14,11 @@
 
 - Gameplay;
 
-<img src="http://g.recordit.co/prlLlt9qSe.gif" alt="flashcards in action" height=auto width=75%/>
+<img src="http://g.recordit.co/u5Gjei3Mvb.gif" alt="flashcards in action" height=auto width=75%/>
 
 - End of Round;
 
-<img src="http://g.recordit.co/Jb2B49xuDd.gif" alt="end of round" height=auto width=75%/>
+<img src="http://g.recordit.co/c7gvGzganY.gif" alt="end of round" height=auto width=75%/>
 
 ## Install/Setup Instructions
 
