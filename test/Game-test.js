@@ -3,7 +3,7 @@ const expect = chai.expect;
 
 const Game = require("../src/Game");
 
-describe('Game', () => {
+describe("Game", () => {
   let game;
   beforeEach(() => {
     game = new Game();

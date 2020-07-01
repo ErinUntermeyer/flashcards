@@ -1,11 +1,11 @@
-const chai = require('chai');
+const chai = require("chai");
 const expect = chai.expect;
 
-const Card = require('../src/Card');
-const Deck = require('../src/Deck');
-const Round = require('../src/Round');
+const Card = require("../src/Card");
+const Deck = require("../src/Deck");
+const Round = require("../src/Round");
 
-describe('Round', () => {
+describe("Round", () => {
   let card1, card2, card3, deck, round;
   beforeEach(function() {
     card1 = new Card(1, "What allows you to define a set of related information using key-value pairs?", ["object", "array", "function"], "object")
@@ -15,19 +15,19 @@ describe('Round', () => {
     round = new Round(deck);
   });
 
-  it('should be a function', () => {
-    expect(Round).to.be.a('function');
+  it("should be a function", () => {
+    expect(Round).to.be.a("function");
   });
 
-  it('should be an instance of Round', () => {
+  it("should be an instance of Round", () => {
     expect(round).to.be.an.instanceOf(Round);
   })
 
-  it('should store a deck', () => {
+  it("should store a deck", () => {
     expect(round.deck).to.equal(deck.cards);
   })
 
-  it('should store the number of turns taken', () => {
+  it("should store the number of turns taken", () => {
     expect(round.turns).to.equal(0);
     round.takeTurn("object");
     expect(round.turns).to.equal(1);
@@ -36,29 +36,29 @@ describe('Round', () => {
     expect(round.turns).to.equal(3);
   })
 
-  it('should store incorrect guesses in an array via id', () => {
+  it("should store incorrect guesses in an array via id", () => {
     round.takeTurn("object");
     round.takeTurn("function");
     round.takeTurn("accessor method");
     expect(round.incorrectGuesses).to.deep.equal([2, 3]);
   })
 
-  it('should return the current card', () => {
+  it("should return the current card", () => {
     expect(round.returnCurrentCard()).to.deep.equal(card1);
   })
 
-  it('should create new Turn instance when guess is made', () => {
+  it("should create new Turn instance when guess is made", () => {
     expect(round.returnCurrentCard()).to.deep.equal(card1);
     round.takeTurn("function");
     expect(round.returnCurrentCard()).to.deep.equal(card2);
   })
 
-  it('should give feedback', () => {
+  it("should give feedback", () => {
     expect(round.takeTurn("object")).to.equal("correct!");
     expect(round.takeTurn("object")).to.equal("incorrect!");
   })
 
-  it('should calculate percent of correct answers', () => {
+  it("should calculate percent of correct answers", () => {
     round.takeTurn("object");
     round.takeTurn("object");
     expect(round.calculatePercentCorrect()).to.equal(50);
