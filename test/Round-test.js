@@ -53,7 +53,15 @@ describe("Round", () => {
     expect(round.returnCurrentCard()).to.deep.equal(card2);
   })
 
-  it("should give feedback", () => {
+  it("should update turn counter after each turn", () => {
+    expect(round.turns).to.equal(0);
+    round.takeTurn("function");
+    expect(round.turns).to.equal(1);
+    round.takeTurn("function");
+    expect(round.turns).to.equal(2);
+  })
+
+  it("should give appropriate feedback", () => {
     expect(round.takeTurn("object")).to.equal("correct!");
     expect(round.takeTurn("object")).to.equal("incorrect!");
   })
@@ -65,6 +73,5 @@ describe("Round", () => {
     round.takeTurn("object");
     expect(round.calculatePercentCorrect()).to.equal(33);
   })
-
 
 });
