@@ -14,9 +14,9 @@ class Round {
   takeTurn(guess) {
     let card = this.returnCurrentCard();
     let turn = new Turn(guess, card);
-    this.turns = this.turns + 1;
+    this.turns++;
     this.deck.shift();
-    if (turn.evaluateGuess() === false) {
+    if (!turn.evaluateGuess()) {
       this.incorrectGuesses.push(card.id);
     }
     return turn.giveFeedback();
