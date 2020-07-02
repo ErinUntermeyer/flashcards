@@ -31,8 +31,8 @@ class Round {
       console.log(`Oops! You scored a ${this.calculatePercentCorrect()}%! Play again to score 90% or higher!`);
       return process.exit();
     } else {
-    console.log(`** Round over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`);
-    return process.exit();
+      console.log(`** Round over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`);
+      return process.exit();
     }
   }
 }
